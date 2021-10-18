@@ -39,8 +39,8 @@ class CodeViewSet(viewsets.ViewSet, generics.CreateAPIView):
         path_script = root + '/' + file_script
         path_in = root + file_in
         path_out = root + file_out
-        shutil.copy('./docker/python/Dockerfile', root)
-        shutil.copy('./docker/python/entrypoint.sh', root)
+        shutil.copy(folder + '/Dockerfile', root)
+        shutil.copy(folder + '/entrypoint.sh', root)
         with open(path_script, "w") as src, open(path_in, "w") as input:
             src.writelines(source.get('source'))
             input.writelines(source.get('input'))
