@@ -11,11 +11,12 @@ import { Box } from "@mui/system";
 import CircularProgress from '@mui/material/CircularProgress';
 import { green } from '@mui/material/colors';
 import Editor from "@monaco-editor/react";
+import SendIcon from '@mui/icons-material/Send';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
         minHeight: '100vh',
-        marginTop: '20vh',
+        marginTop: '10vh',
         justifyContent: 'center',
         alignItems: 'top',
         display: 'flex',
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     output: {
         marginTop: '20px',
         fontSize: 18,
+        marginBottom: '20px',
     },
 }));
 const languages = ['python', 'javascript', 'java'];
@@ -132,7 +134,7 @@ const Compiler: React.FC = () => {
                                 }}
                             />
                         )}
-                        <Button variant="contained"
+                        <Button variant="contained" endIcon={<SendIcon />}
                             onClick={runCode} disabled={loading}>
                             {btnInfo}
                         </Button>
@@ -143,6 +145,7 @@ const Compiler: React.FC = () => {
                 className={classes.output}
                 aria-label="minimum height"
                 minRows={10}
+                disabled={true}
                 placeholder="Output"
                 style={{ width: 1000 }}
                 value={output.output}

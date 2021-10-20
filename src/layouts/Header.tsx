@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
     root: {
         height: '20vh',
-        
+            
     },
     headerControl:{
         display:'flex',
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
     const classes = useStyles();
     return (
-        <AppBar elevation={2}>
+        <AppBar elevation={2} position='static'>
             <Toolbar>
                 <div className={classes.headerControl}>
                     <Typography variant='h6' padding={2}>Welcome to OU Code</Typography>
